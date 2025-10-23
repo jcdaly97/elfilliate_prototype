@@ -1,0 +1,18 @@
+{
+  "productImages": [
+    "products/product-1.JPG",
+    "products/product-2.JPG",
+    "products/product-3.JPG",
+    "products/product-4.JPG",
+    "products/product-6.JPG",
+    "products/product-7.JPG",
+    "products/product-8.JPG"
+  ],
+  "socialPostImages": [
+    "social-posts/social-1.JPG",
+    "social-posts/social-2.JPG",
+    "social-posts/social-3.JPG",
+    "social-posts/social-4.JPG",
+    "social-posts/social-5.JPG"
+  ]
+}

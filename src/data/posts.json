@@ -1,0 +1,119 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "user": {
+        "id": 101,
+        "name": "Jane",
+        "avatar": "jane-avatar.jpg",
+        "date": "09/10/25"
+      },
+      "content": "✨ My go-to makeup obsession? e.l.f. Cosmetics, hands down. From their lightweight foundation to the must-have Camo Concealer and those dreamy bite-size eyeshadow palettes — every product just works. Affordable, cruelty-free, and always on point. 💄💕",
+      "hashtags": ["#elfcosmetics", "#makeuplover", "#beautyroutine"],
+      "media": {
+        "type": "video",
+        "url": "makeup-tutorial.mp4",
+        "thumbnail": "makeup-tutorial-thumb.jpg"
+      },
+      "products": [
+        {
+          "id": 1001,
+          "name": "Camo Concealer",
+          "image": "camo-concealer.jpg"
+        },
+        {
+          "id": 1002,
+          "name": "Bite-Size Eyeshadow",
+          "image": "bite-size-eyeshadow.jpg"
+        },
+        {
+          "id": 1003,
+          "name": "Liquid Foundation",
+          "image": "liquid-foundation.jpg"
+        },
+        {
+          "id": 1004,
+          "name": "Putty Primer",
+          "image": "putty-primer.jpg"
+        }
+      ],
+      "engagement": {
+        "views": 3245,
+        "likes": 187,
+        "shares": 42,
+        "comments": 23
+      }
+    },
+    {
+      "id": 2,
+      "user": {
+        "id": 102,
+        "name": "Alex",
+        "avatar": "alex-avatar.jpg",
+        "date": "09/05/25"
+      },
+      "content": "Just tried the new e.l.f. Halo Glow Filter and I'm OBSESSED! 🌟 Perfect for that dewy summer look without feeling heavy. Paired it with their Power Grip Primer and my makeup lasted all day through the heat. #SummerMakeupWin",
+      "hashtags": ["#elfhaloglow", "#summermakeup", "#dewyskin"],
+      "media": {
+        "type": "image",
+        "url": "halo-glow-selfie.jpg"
+      },
+      "products": [
+        {
+          "id": 2001,
+          "name": "Halo Glow Filter",
+          "image": "halo-glow.jpg"
+        },
+        {
+          "id": 2002,
+          "name": "Power Grip Primer",
+          "image": "power-grip.jpg"
+        }
+      ],
+      "engagement": {
+        "views": 2876,
+        "likes": 156,
+        "shares": 31,
+        "comments": 18
+      }
+    },
+    {
+      "id": 3,
+      "user": {
+        "id": 103,
+        "name": "Taylor",
+        "avatar": "taylor-avatar.jpg",
+        "date": "08/28/25"
+      },
+      "content": "My everyday essentials from e.l.f. that I can't live without! 💯 Their Hydrating Camo Concealer is perfect for my dry under-eyes, and the Putty Blush gives the most natural flush. All these products for under $30 total - that's why I love e.l.f.!",
+      "hashtags": ["#elfessentials", "#budgetbeauty", "#makeupmusthaves"],
+      "media": {
+        "type": "image",
+        "url": "elf-collection.jpg"
+      },
+      "products": [
+        {
+          "id": 3001,
+          "name": "Hydrating Camo Concealer",
+          "image": "hydrating-camo.jpg"
+        },
+        {
+          "id": 3002,
+          "name": "Putty Blush",
+          "image": "putty-blush.jpg"
+        },
+        {
+          "id": 3003,
+          "name": "Wow Brow Gel",
+          "image": "wow-brow.jpg"
+        }
+      ],
+      "engagement": {
+        "views": 3102,
+        "likes": 203,
+        "shares": 47,
+        "comments": 29
+      }
+    }
+  ]
+}

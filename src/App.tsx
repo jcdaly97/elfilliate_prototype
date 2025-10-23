@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import styled from "styled-components";
+import Layout from "./components/layout/Layout";
+import Dashboard from "./pages/Dashboard";
+import Collections from "./pages/Collections";
+import Posts from "./pages/Posts";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
+import "./App.css";
+import "./styles.css";
+import CollectionDetail from "./pages/CollectionDetail";
 
-function App() {
+const AppContainer = styled.div`
+  min-height: 100vh;
+`;
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/collections" element={<Collections />} />
+            <Route path="/collections/:id" element={<CollectionDetail />} />
+            <Route path="/posts" element={<Posts />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </AppContainer>
   );
-}
+};
 
 export default App;
