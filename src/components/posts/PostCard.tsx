@@ -11,9 +11,11 @@ const Card = styled.div`
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
   border: 1px solid #eee;
   transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 640px;
+  width: 100%;
 
   &:hover {
     transform: translateY(-5px);
@@ -71,17 +73,21 @@ const MediaContainer = styled.div`
   color: #999;
   font-size: 0.9rem;
   overflow: hidden;
+  
+  @media (max-width: 768px) {
+    height: 280px;
+  }
+  
+  @media (max-width: 480px) {
+    height: 220px;
+  }
 `;
 
 const MediaImage = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-
-  ${Card}:hover & {
-    transform: scale(1.05);
-  }
+  object-fit: contain;
+  background-color: #f5f5f5; /* letterbox/pillarbox color around images */
 `;
 
 const PlayButton = styled.div`
