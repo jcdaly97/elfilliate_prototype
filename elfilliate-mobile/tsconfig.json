@@ -10,7 +10,9 @@
     "noEmit": true,
     "strict": false,
     "target": "esnext",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["react", "react-native", "expo"]
   },
-  "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js"],
+  "include": ["App.tsx", "src"]
 }
