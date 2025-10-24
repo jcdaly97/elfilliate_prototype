@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Text,
-} from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import HomeScreen from "./src/screens/HomeScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
+import TopImageBar, { TOP_IMAGE_BAR_HEIGHT } from "./src/components/common/TopImageBar";
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState("Home");
@@ -47,7 +42,8 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      {renderScreen()}
+      <TopImageBar />
+      <View style={{ paddingTop: TOP_IMAGE_BAR_HEIGHT }}>{renderScreen()}</View>
     </SafeAreaView>
   );
 }
