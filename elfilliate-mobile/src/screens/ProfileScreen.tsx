@@ -56,9 +56,9 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation, route }) => {
   };
 
   const handleBackPress = () => {
-    console.log("Navigate back");
-    // If we had navigation set up:
-    // navigation.goBack();
+    if (navigation?.goBack) {
+      navigation.goBack();
+    }
   };
 
   // Filter posts by this influencer

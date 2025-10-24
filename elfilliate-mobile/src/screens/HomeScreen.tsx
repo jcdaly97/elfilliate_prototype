@@ -21,9 +21,10 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
   const [activeTab, setActiveTab] = useState("Posts");
 
   const navigateToInfluencerProfile = (id: number) => {
-    console.log(`Navigate to influencer profile: ${id}`);
-    // If we had navigation set up:
-    // navigation.navigate('InfluencerProfile', { id });
+    // Navigate to the simple state-based profile screen wired in App.tsx
+    if (navigation?.navigate) {
+      navigation.navigate("InfluencerProfile", { id });
+    }
   };
 
   const navigateToPost = (id: number) => {
