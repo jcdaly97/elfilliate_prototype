@@ -12,7 +12,7 @@ export const posts = [
     hashtags: ["#elfcosmetics", "#makeuplover", "#beautyroutine"],
     media: {
       type: "image" as const,
-      url: require("../../assets/placeholder-post.png"),
+      url: require("../../assets/images/social-1.JPG"),
     },
     products: [
       {
@@ -56,7 +56,7 @@ export const posts = [
     hashtags: ["#elfhaloglow", "#summermakeup", "#dewyskin"],
     media: {
       type: "image" as const,
-      url: require("../../assets/placeholder-post.png"),
+      url: require("../../assets/images/social-2.JPG"),
     },
     products: [
       {
@@ -90,7 +90,7 @@ export const posts = [
     hashtags: ["#elfessentials", "#budgetbeauty", "#makeupmusthaves"],
     media: {
       type: "image" as const,
-      url: require("../../assets/placeholder-post.png"),
+      url: require("../../assets/images/social-3.JPG"),
     },
     products: [
       {

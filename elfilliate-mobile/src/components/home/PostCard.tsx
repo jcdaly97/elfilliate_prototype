@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ImageSourcePropType } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ImageSourcePropType, Image } from "react-native";
 import Placeholder from "../common/Placeholder";
 import { IconDots, IconEye, IconHeart, IconMessageCircle, IconShare } from "@tabler/icons-react-native";
 
@@ -73,7 +73,11 @@ const PostCard: React.FC<PostCardProps> = ({
       </View>
 
       <View style={styles.mediaContainer}>
-        <Placeholder width={300} height={200} type="post" />
+        {media.type === "image" ? (
+          <Image source={media.url} style={styles.mediaImage} resizeMode="cover" />
+        ) : (
+          <Placeholder width={300} height={200} type="post" />
+        )}
       </View>
 
       <View style={styles.engagementContainer}>
@@ -126,10 +130,10 @@ const styles = StyleSheet.create({
   hashtagsContainer: { flexDirection: "row", flexWrap: "wrap" },
   hashtag: { fontSize: 12, color: "#2196f3", marginRight: 8 },
   mediaContainer: { marginBottom: 12, borderRadius: 8, overflow: "hidden" },
+  mediaImage: { width: "100%", height: 200 },
   engagementContainer: { flexDirection: "row", justifyContent: "space-between" },
   engagementItem: { flexDirection: "row", alignItems: "center" },
   engagementText: { fontSize: 12, color: "#666666" },
 });
 
 export default PostCard;
-
