@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   heroSection: {
-    backgroundColor: "#66CDAA", // Mint green color
+    backgroundColor: "#9c27b0", // Match app primary/avatar purple
     padding: 24,
     alignItems: "center",
   },
