@@ -11,7 +11,7 @@ export const posts = [
       "✨ My go-to makeup obsession? e.l.f. Cosmetics, hands down. From their lightweight foundation to the must-have Camo Concealer and those dreamy bite-size eyeshadow palettes — every product just works. Affordable, cruelty-free, and always on point. 💄💕",
     hashtags: ["#elfcosmetics", "#makeuplover", "#beautyroutine"],
     media: {
-      type: "image",
+      type: "image" as const,
       url: require("../../assets/placeholder-post.png"),
     },
     products: [
@@ -55,7 +55,7 @@ export const posts = [
       "Just tried the new e.l.f. Halo Glow Filter and I'm OBSESSED! 🌟 Perfect for that dewy summer look without feeling heavy. Paired it with their Power Grip Primer and my makeup lasted all day through the heat. #SummerMakeupWin",
     hashtags: ["#elfhaloglow", "#summermakeup", "#dewyskin"],
     media: {
-      type: "image",
+      type: "image" as const,
       url: require("../../assets/placeholder-post.png"),
     },
     products: [
@@ -89,7 +89,7 @@ export const posts = [
       "My everyday essentials from e.l.f. that I can't live without! 💯 Their Hydrating Camo Concealer is perfect for my dry under-eyes, and the Putty Blush gives the most natural flush. All these products for under $30 total - that's why I love e.l.f.!",
     hashtags: ["#elfessentials", "#budgetbeauty", "#makeupmusthaves"],
     media: {
-      type: "image",
+      type: "image" as const,
       url: require("../../assets/placeholder-post.png"),
     },
     products: [
