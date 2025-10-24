@@ -47,7 +47,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
           </View>
         )}
       </View>
-      <TouchableOpacity style={styles.viewAllButton}>
+      <TouchableOpacity style={styles.viewAllButton} onPress={handlePress}>
         <Text style={styles.viewAllText}>VIEW ALL</Text>
       </TouchableOpacity>
     </TouchableOpacity>

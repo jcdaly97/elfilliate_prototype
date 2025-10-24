@@ -24,6 +24,7 @@ interface PostCardProps {
     comments: number;
   };
   onPress?: (id: number) => void;
+  onUserPress?: (userId: number, userName: string) => void;
 }
 
 const PostCard: React.FC<PostCardProps> = ({
@@ -34,6 +35,7 @@ const PostCard: React.FC<PostCardProps> = ({
   media,
   engagement,
   onPress,
+  onUserPress,
 }) => {
   const handlePress = () => {
     if (onPress) onPress(id);
@@ -47,13 +49,17 @@ const PostCard: React.FC<PostCardProps> = ({
   return (
     <TouchableOpacity style={styles.container} onPress={handlePress}>
       <View style={styles.header}>
-        <View style={styles.userInfo}>
+        <TouchableOpacity
+          style={styles.userInfo}
+          onPress={() => onUserPress && onUserPress(user.id, user.name)}
+          activeOpacity={0.7}
+        >
           <Placeholder width={40} height={40} type="avatar" />
           <View style={styles.userTextContainer}>
             <Text style={styles.userName}>{user.name}</Text>
             <Text style={styles.date}>{user.date}</Text>
           </View>
-        </View>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.moreButton}>
           <IconDots size={18} color="#333" />
         </TouchableOpacity>

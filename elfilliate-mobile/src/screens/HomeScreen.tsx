@@ -33,6 +33,16 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
     // navigation.navigate('PostDetail', { id });
   };
 
+  const navigateToInfluencerFromPost = (userId: number, userName: string) => {
+    const match = influencers.find(
+      (inf) => inf.name.toLowerCase() === userName.toLowerCase()
+    );
+    const id = match?.id ?? 1;
+    if (navigation?.navigate) {
+      navigation.navigate("InfluencerProfile", { id });
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Header title="e.l.f.iliate" />
@@ -110,6 +120,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
                 media={post.media}
                 engagement={post.engagement}
                 onPress={navigateToPost}
+                onUserPress={navigateToInfluencerFromPost}
               />
             ))}
           </View>

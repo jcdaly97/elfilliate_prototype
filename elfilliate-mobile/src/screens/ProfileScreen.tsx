@@ -44,9 +44,8 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation, route }) => {
   };
 
   const navigateToCollection = (id: number) => {
-    console.log(`Navigate to collection: ${id}`);
-    // If we had navigation set up:
-    // navigation.navigate('CollectionDetail', { id });
+    // Jump to Products tab when tapping "VIEW ALL" on a collection
+    setActiveTab(2);
   };
 
   const navigateToProduct = (id: number) => {
