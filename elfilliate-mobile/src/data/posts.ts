@@ -3,7 +3,7 @@ export const posts = [
     id: 1,
     user: {
       id: 101,
-      name: "Jane",
+      name: "Melissa Jones",
       avatar: require("../../assets/placeholder-avatar.png"),
       date: "09/10/25",
     },
@@ -47,7 +47,7 @@ export const posts = [
     id: 2,
     user: {
       id: 102,
-      name: "Alex",
+      name: "Melissa Ray",
       avatar: require("../../assets/placeholder-avatar.png"),
       date: "09/05/25",
     },
@@ -81,7 +81,7 @@ export const posts = [
     id: 3,
     user: {
       id: 103,
-      name: "Taylor",
+      name: "Melissa Jones",
       avatar: require("../../assets/placeholder-avatar.png"),
       date: "08/28/25",
     },

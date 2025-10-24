@@ -1,7 +1,7 @@
 export const influencers = [
   {
     id: 1,
-    name: "Mallisa Jones",
+    name: "Melissa Jones",
     avatar: require("../../assets/placeholder-avatar.png"),
     bio: "Welcome to my e.l.f.iliate store front! You can find all my tutorials below and all the amazing products I use!",
     followers: 125000,
