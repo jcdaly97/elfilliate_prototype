@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { IconChevronLeft, IconSearch, IconUser, IconShoppingCart } from "@tabler/icons-react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { IconChevronLeft } from "@tabler/icons-react-native";
 
 interface HeaderProps {
   title?: string;
@@ -15,74 +15,48 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.leftContainer}>
-        {showBackButton && (
-          <TouchableOpacity onPress={onBackPress} style={styles.backButton}>
-            <IconChevronLeft size={24} color="#000" />
-          </TouchableOpacity>
-        )}
-      </View>
-
-      <View style={styles.centerContainer}>
-        <Text style={styles.title}>{title}</Text>
-      </View>
-
-      <View style={styles.rightContainer}>
-        <TouchableOpacity style={styles.iconButton}>
-          <IconSearch size={20} color="#000" />
+      <Image
+        source={require("../../../assets/images/mock_top_nav.png")}
+        style={styles.topImage}
+        resizeMode="cover"
+      />
+      {showBackButton && (
+        <TouchableOpacity onPress={onBackPress} style={styles.backButton}>
+          <IconChevronLeft size={24} color="#000" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.iconButton}>
-          <IconUser size={20} color="#000" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.iconButton}>
-          <IconShoppingCart size={20} color="#000" />
-        </TouchableOpacity>
-      </View>
+      )}
+      {/* Title kept for a11y but visually hidden over image */}
+      <Text accessibilityElementsHidden style={styles.visuallyHidden}>{title}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    height: 60,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: 16,
+    height: 64,
+    justifyContent: "center",
     backgroundColor: "#ffffff",
     borderBottomWidth: 1,
     borderBottomColor: "#e0e0e0",
+    overflow: "hidden",
   },
-  leftContainer: {
-    flex: 1,
-    alignItems: "flex-start",
-  },
-  centerContainer: {
-    flex: 2,
-    alignItems: "center",
-  },
-  rightContainer: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "flex-end",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
+  topImage: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: "100%",
+    height: "100%",
   },
   backButton: {
     padding: 8,
+    zIndex: 2,
+    position: "absolute",
+    left: 8,
+    top: 16,
   },
-  backButtonText: {
-    fontSize: 24,
-  },
-  iconButton: {
-    padding: 8,
-    marginLeft: 8,
-  },
-  iconText: {
-    fontSize: 18,
-  },
+  visuallyHidden: { position: "absolute", width: 1, height: 1, opacity: 0 },
 });
 
 export default Header;
