@@ -43,7 +43,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
       <TopImageBar />
-      <View style={{ paddingTop: TOP_IMAGE_BAR_HEIGHT }}>{renderScreen()}</View>
+      <View style={{ flex: 1, paddingTop: TOP_IMAGE_BAR_HEIGHT }}>{renderScreen()}</View>
     </SafeAreaView>
   );
 }
