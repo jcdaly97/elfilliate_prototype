@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ImageSourcePropType } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ImageSourcePropType, Image } from "react-native";
 import Placeholder from "../common/Placeholder";
 
 interface Product {
@@ -38,7 +38,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
       <View style={styles.productsContainer}>
         {displayedProducts.map((product) => (
           <View key={product.id} style={styles.productItem}>
-            <Placeholder width={70} height={70} type="product" />
+            <Image source={product.image} style={styles.productImage} />
           </View>
         ))}
         {remainingCount > 0 && (
@@ -79,6 +79,12 @@ const styles = StyleSheet.create({
   productItem: {
     marginRight: 8,
     marginBottom: 8,
+  },
+  productImage: {
+    width: 70,
+    height: 70,
+    borderRadius: 4,
+    resizeMode: "cover",
   },
   moreContainer: {
     width: 70,

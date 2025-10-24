@@ -14,13 +14,13 @@ export const influencers = [
           {
             id: 101,
             name: "Liquid Blush",
-            image: require("../../assets/placeholder-product.png"),
+            image: require("../../assets/images/product-1.JPG"),
             price: 6.99,
           },
           {
             id: 102,
             name: "Putty Blush",
-            image: require("../../assets/placeholder-product.png"),
+            image: require("../../assets/images/product-2.JPG"),
             price: 8.99,
           },
         ],
@@ -32,13 +32,13 @@ export const influencers = [
           {
             id: 201,
             name: "Glow Reviver Melting Lip Balm",
-            image: require("../../assets/placeholder-product.png"),
+            image: require("../../assets/images/product-3.JPG"),
             price: 9.0,
           },
           {
             id: 202,
             name: "Sheer For It Blush Tint",
-            image: require("../../assets/placeholder-product.png"),
+            image: require("../../assets/images/product-4.JPG"),
             price: 6.0,
           },
         ],
@@ -48,7 +48,7 @@ export const influencers = [
       {
         id: 1001,
         name: "Glow Reviver Melting Lip Balm",
-        image: require("../../assets/placeholder-product.png"),
+        image: require("../../assets/images/product-6.JPG"),
         price: 9.0,
         rating: 4.5,
         reviews: 2537,
@@ -57,7 +57,7 @@ export const influencers = [
       {
         id: 1002,
         name: "Sheer For It Blush Tint",
-        image: require("../../assets/placeholder-product.png"),
+        image: require("../../assets/images/product-7.JPG"),
         price: 6.0,
         rating: 4.5,
         reviews: 2537,

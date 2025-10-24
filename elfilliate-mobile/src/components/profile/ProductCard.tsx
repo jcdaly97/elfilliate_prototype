@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ImageSourcePropType } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ImageSourcePropType, Image } from "react-native";
 import { IconHeart, IconStar, IconStarFilled, IconStarHalf } from "@tabler/icons-react-native";
 import Placeholder from "../common/Placeholder";
 
@@ -60,7 +60,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <TouchableOpacity style={styles.container} onPress={handlePress}>
       <View style={styles.imageContainer}>
-        <Placeholder width={150} height={150} type="product" />
+        <Image source={image} style={styles.productImage} />
         <TouchableOpacity style={styles.favoriteButton} onPress={handleFavorite}>
           <IconHeart size={18} color="#e91e63" />
         </TouchableOpacity>
@@ -131,6 +131,12 @@ const styles = StyleSheet.create({
     position: "relative",
     marginBottom: 8,
     alignItems: "center",
+  },
+  productImage: {
+    width: 150,
+    height: 150,
+    borderRadius: 8,
+    resizeMode: "cover",
   },
   favoriteButton: {
     position: "absolute",
