@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ImageSourcePropType } from "react-native";
 import Placeholder from "../common/Placeholder";
+import { IconDots, IconEye, IconHeart, IconMessageCircle, IconShare } from "@tabler/icons-react-native";
 
 interface PostCardProps {
   id: number;
@@ -35,15 +36,11 @@ const PostCard: React.FC<PostCardProps> = ({
   onPress,
 }) => {
   const handlePress = () => {
-    if (onPress) {
-      onPress(id);
-    }
+    if (onPress) onPress(id);
   };
 
   const formatNumber = (num: number): string => {
-    if (num >= 1000) {
-      return (num / 1000).toFixed(1) + "k";
-    }
+    if (num >= 1000) return (num / 1000).toFixed(1) + "k";
     return num.toString();
   };
 
@@ -58,7 +55,7 @@ const PostCard: React.FC<PostCardProps> = ({
           </View>
         </View>
         <TouchableOpacity style={styles.moreButton}>
-          <Text>•••</Text>
+          <IconDots size={18} color="#333" />
         </TouchableOpacity>
       </View>
 
@@ -81,28 +78,20 @@ const PostCard: React.FC<PostCardProps> = ({
 
       <View style={styles.engagementContainer}>
         <View style={styles.engagementItem}>
-          <Text style={styles.engagementIcon}>👁️</Text>
-          <Text style={styles.engagementText}>
-            {formatNumber(engagement.views)}
-          </Text>
+          <IconEye size={16} color="#666" style={{ marginRight: 4 }} />
+          <Text style={styles.engagementText}>{formatNumber(engagement.views)}</Text>
         </View>
         <View style={styles.engagementItem}>
-          <Text style={styles.engagementIcon}>❤️</Text>
-          <Text style={styles.engagementText}>
-            {formatNumber(engagement.likes)}
-          </Text>
+          <IconHeart size={16} color="#666" style={{ marginRight: 4 }} />
+          <Text style={styles.engagementText}>{formatNumber(engagement.likes)}</Text>
         </View>
         <View style={styles.engagementItem}>
-          <Text style={styles.engagementIcon}>💬</Text>
-          <Text style={styles.engagementText}>
-            {formatNumber(engagement.comments)}
-          </Text>
+          <IconMessageCircle size={16} color="#666" style={{ marginRight: 4 }} />
+          <Text style={styles.engagementText}>{formatNumber(engagement.comments)}</Text>
         </View>
         <View style={styles.engagementItem}>
-          <Text style={styles.engagementIcon}>↗️</Text>
-          <Text style={styles.engagementText}>
-            {formatNumber(engagement.shares)}
-          </Text>
+          <IconShare size={16} color="#666" style={{ marginRight: 4 }} />
+          <Text style={styles.engagementText}>{formatNumber(engagement.shares)}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -127,62 +116,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 12,
   },
-  userInfo: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  userTextContainer: {
-    marginLeft: 8,
-  },
-  userName: {
-    fontWeight: "bold",
-    fontSize: 14,
-  },
-  date: {
-    fontSize: 12,
-    color: "#666666",
-  },
-  moreButton: {
-    padding: 4,
-  },
-  contentContainer: {
-    marginBottom: 12,
-  },
-  contentText: {
-    fontSize: 14,
-    lineHeight: 20,
-    marginBottom: 8,
-  },
-  hashtagsContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-  },
-  hashtag: {
-    fontSize: 12,
-    color: "#2196f3",
-    marginRight: 8,
-  },
-  mediaContainer: {
-    marginBottom: 12,
-    borderRadius: 8,
-    overflow: "hidden",
-  },
-  engagementContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  engagementItem: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  engagementIcon: {
-    fontSize: 16,
-    marginRight: 4,
-  },
-  engagementText: {
-    fontSize: 12,
-    color: "#666666",
-  },
+  userInfo: { flexDirection: "row", alignItems: "center" },
+  userTextContainer: { marginLeft: 8 },
+  userName: { fontWeight: "bold", fontSize: 14 },
+  date: { fontSize: 12, color: "#666666" },
+  moreButton: { padding: 4 },
+  contentContainer: { marginBottom: 12 },
+  contentText: { fontSize: 14, lineHeight: 20, marginBottom: 8 },
+  hashtagsContainer: { flexDirection: "row", flexWrap: "wrap" },
+  hashtag: { fontSize: 12, color: "#2196f3", marginRight: 8 },
+  mediaContainer: { marginBottom: 12, borderRadius: 8, overflow: "hidden" },
+  engagementContainer: { flexDirection: "row", justifyContent: "space-between" },
+  engagementItem: { flexDirection: "row", alignItems: "center" },
+  engagementText: { fontSize: 12, color: "#666666" },
 });
 
 export default PostCard;
+

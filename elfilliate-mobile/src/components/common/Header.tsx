@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import Placeholder from "./Placeholder";
+import { IconChevronLeft, IconSearch, IconUser, IconShoppingCart } from "@tabler/icons-react-native";
 
 interface HeaderProps {
   title?: string;
@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({
       <View style={styles.leftContainer}>
         {showBackButton && (
           <TouchableOpacity onPress={onBackPress} style={styles.backButton}>
-            <Text style={styles.backButtonText}>←</Text>
+            <IconChevronLeft size={24} color="#000" />
           </TouchableOpacity>
         )}
       </View>
@@ -29,13 +29,13 @@ const Header: React.FC<HeaderProps> = ({
 
       <View style={styles.rightContainer}>
         <TouchableOpacity style={styles.iconButton}>
-          <Text style={styles.iconText}>🔍</Text>
+          <IconSearch size={20} color="#000" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.iconButton}>
-          <Text style={styles.iconText}>👤</Text>
+          <IconUser size={20} color="#000" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.iconButton}>
-          <Text style={styles.iconText}>🛒</Text>
+          <IconShoppingCart size={20} color="#000" />
         </TouchableOpacity>
       </View>
     </View>

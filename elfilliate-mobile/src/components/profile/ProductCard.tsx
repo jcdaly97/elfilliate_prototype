@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ImageSourcePropType } from "react-native";
+import { IconHeart, IconStar, IconStarFilled, IconStarHalf } from "@tabler/icons-react-native";
 import Placeholder from "../common/Placeholder";
 
 interface ProductCardProps {
@@ -45,23 +46,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
     for (let i = 0; i < 5; i++) {
       if (i < fullStars) {
-        stars.push(
-          <Text key={i} style={styles.star}>
-            ★
-          </Text>
-        );
+        stars.push(<IconStarFilled key={i} size={14} color="#FFD700" />);
       } else if (i === fullStars && hasHalfStar) {
-        stars.push(
-          <Text key={i} style={styles.star}>
-            ✭
-          </Text>
-        );
+        stars.push(<IconStarHalf key={i} size={14} color="#FFD700" />);
       } else {
-        stars.push(
-          <Text key={i} style={styles.emptyStar}>
-            ☆
-          </Text>
-        );
+        stars.push(<IconStar key={i} size={14} color="#D3D3D3" />);
       }
     }
 
@@ -72,11 +61,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
     <TouchableOpacity style={styles.container} onPress={handlePress}>
       <View style={styles.imageContainer}>
         <Placeholder width={150} height={150} type="product" />
-        <TouchableOpacity
-          style={styles.favoriteButton}
-          onPress={handleFavorite}
-        >
-          <Text style={styles.favoriteIcon}>♡</Text>
+        <TouchableOpacity style={styles.favoriteButton} onPress={handleFavorite}>
+          <IconHeart size={18} color="#e91e63" />
         </TouchableOpacity>
       </View>
 

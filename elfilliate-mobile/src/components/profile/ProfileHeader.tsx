@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { IconHeart, IconHeartFilled } from "@tabler/icons-react-native";
 import Placeholder from "../common/Placeholder";
 
 interface ProfileHeaderProps {
@@ -38,9 +39,21 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
           ]}
           onPress={onFavoritePress}
         >
-          <Text style={styles.favoriteButtonText}>
-            {isFavorite ? "★ FAVORITE" : "☆ FAVORITE"}
-          </Text>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            {isFavorite ? (
+              <IconHeartFilled size={16} color="#ffffff" />
+            ) : (
+              <IconHeart size={16} color="#000000" />
+            )}
+            <Text
+              style={[
+                styles.favoriteButtonText,
+                isFavorite ? { color: "#ffffff" } : {},
+              ]}
+            >
+              {" "}FAVORITE
+            </Text>
+          </View>
         </TouchableOpacity>
       </View>
     </View>
