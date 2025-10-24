@@ -19,11 +19,11 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   onFavoritePress,
 }) => {
   const socialImages = [
-    require("../../assets/images/social-1.jpg"),
-    require("../../assets/images/social-2.jpg"),
-    require("../../assets/images/social-3.jpg"),
-    require("../../assets/images/social-4.jpg"),
-    require("../../assets/images/social-5.jpg"),
+    require("../../../assets/images/social-1.jpg"),
+    require("../../../assets/images/social-2.jpg"),
+    require("../../../assets/images/social-3.jpg"),
+    require("../../../assets/images/social-4.jpg"),
+    require("../../../assets/images/social-5.jpg"),
   ];
 
   const pickHeaderImage = () => {
