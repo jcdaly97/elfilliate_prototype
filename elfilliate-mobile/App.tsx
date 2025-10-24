@@ -1,15 +1,53 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import React, { useState } from "react";
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Text,
+} from "react-native";
+import { StatusBar } from "expo-status-bar";
+import HomeScreen from "./src/screens/HomeScreen";
+import ProfileScreen from "./src/screens/ProfileScreen";
 
 export default function App() {
+  const [currentScreen, setCurrentScreen] = useState("Home");
+  const [selectedInfluencerId, setSelectedInfluencerId] = useState(1);
+
+  // Simple navigation without using a navigation library
+  const navigation = {
+    navigate: (screen: string, params?: any) => {
+      setCurrentScreen(screen);
+      if (params?.id) {
+        setSelectedInfluencerId(params.id);
+      }
+    },
+    goBack: () => {
+      setCurrentScreen("Home");
+    },
+  };
+
+  // Render the current screen
+  const renderScreen = () => {
+    switch (currentScreen) {
+      case "Home":
+        return <HomeScreen navigation={navigation} />;
+      case "InfluencerProfile":
+        return (
+          <ProfileScreen
+            navigation={navigation}
+            route={{ params: { id: selectedInfluencerId } }}
+          />
+        );
+      default:
+        return <HomeScreen navigation={navigation} />;
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      <View style={styles.inner}>
-        <Text style={styles.title}>e.l.f.iliate Mobile</Text>
-        <Text style={styles.subtitle}>Expo app scaffold — ready to build</Text>
-      </View>
+      {renderScreen()}
     </SafeAreaView>
   );
 }
@@ -17,21 +55,25 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
   },
-  inner: {
-    paddingHorizontal: 24,
-    alignItems: 'center',
+  tabBar: {
+    flexDirection: "row",
+    borderTopWidth: 1,
+    borderTopColor: "#e0e0e0",
+    backgroundColor: "#ffffff",
   },
-  title: {
-    fontSize: 24,
-    fontWeight: '600',
+  tabButton: {
+    flex: 1,
+    paddingVertical: 12,
+    alignItems: "center",
   },
-  subtitle: {
-    marginTop: 8,
-    color: '#666',
+  tabText: {
+    fontSize: 12,
+    color: "#666666",
+  },
+  activeTabText: {
+    color: "#000000",
+    fontWeight: "bold",
   },
 });
-

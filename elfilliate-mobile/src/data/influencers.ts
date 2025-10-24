@@ -1,0 +1,136 @@
+export const influencers = [
+  {
+    id: 1,
+    name: "Mallisa Jones",
+    avatar: require("../../assets/placeholder-avatar.png"),
+    bio: "Welcome to my e.l.f.iliate store front! You can find all my tutorials below and all the amazing products I use!",
+    followers: 125000,
+    posts: [1, 3],
+    collections: [
+      {
+        id: 1,
+        title: "Favorite Blushes",
+        products: [
+          {
+            id: 101,
+            name: "Liquid Blush",
+            image: require("../../assets/placeholder-product.png"),
+            price: 6.99,
+          },
+          {
+            id: 102,
+            name: "Putty Blush",
+            image: require("../../assets/placeholder-product.png"),
+            price: 8.99,
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Summer Essentials",
+        products: [
+          {
+            id: 201,
+            name: "Glow Reviver Melting Lip Balm",
+            image: require("../../assets/placeholder-product.png"),
+            price: 9.0,
+          },
+          {
+            id: 202,
+            name: "Sheer For It Blush Tint",
+            image: require("../../assets/placeholder-product.png"),
+            price: 6.0,
+          },
+        ],
+      },
+    ],
+    products: [
+      {
+        id: 1001,
+        name: "Glow Reviver Melting Lip Balm",
+        image: require("../../assets/placeholder-product.png"),
+        price: 9.0,
+        rating: 4.5,
+        reviews: 2537,
+        shades: 6,
+      },
+      {
+        id: 1002,
+        name: "Sheer For It Blush Tint",
+        image: require("../../assets/placeholder-product.png"),
+        price: 6.0,
+        rating: 4.5,
+        reviews: 2537,
+        shades: 8,
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Melissa Ray",
+    avatar: require("../../assets/placeholder-avatar.png"),
+    bio: "Makeup artist and e.l.f. enthusiast! Check out my favorite products and tutorials.",
+    followers: 98000,
+    posts: [2],
+    collections: [
+      {
+        id: 3,
+        title: "Everyday Essentials",
+        products: [
+          {
+            id: 301,
+            name: "Power Grip Primer",
+            image: require("../../assets/placeholder-product.png"),
+            price: 10.0,
+          },
+          {
+            id: 302,
+            name: "Halo Glow Filter",
+            image: require("../../assets/placeholder-product.png"),
+            price: 14.0,
+          },
+        ],
+      },
+    ],
+    products: [
+      {
+        id: 2001,
+        name: "Power Grip Primer",
+        image: require("../../assets/placeholder-product.png"),
+        price: 10.0,
+        rating: 4.7,
+        reviews: 3245,
+        shades: 1,
+      },
+      {
+        id: 2002,
+        name: "Halo Glow Filter",
+        image: require("../../assets/placeholder-product.png"),
+        price: 14.0,
+        rating: 4.6,
+        reviews: 2876,
+        shades: 4,
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Jordan Weir",
+    avatar: require("../../assets/placeholder-avatar.png"),
+    bio: "Beauty content creator sharing my favorite e.l.f. products and looks!",
+    followers: 75000,
+    posts: [],
+    collections: [],
+    products: [],
+  },
+  {
+    id: 4,
+    name: "Charlotte Thompson",
+    avatar: require("../../assets/placeholder-avatar.png"),
+    bio: "Makeup enthusiast and skincare lover. e.l.f. products are my go-to!",
+    followers: 110000,
+    posts: [],
+    collections: [],
+    products: [],
+  },
+];
