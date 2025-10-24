@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { IconHeart, IconHeartFilled } from "@tabler/icons-react-native";
 import Placeholder from "../common/Placeholder";
 
@@ -18,10 +18,26 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   isFavorite = false,
   onFavoritePress,
 }) => {
+  const socialImages = [
+    require("../../assets/images/social-1.jpg"),
+    require("../../assets/images/social-2.jpg"),
+    require("../../assets/images/social-3.jpg"),
+    require("../../assets/images/social-4.jpg"),
+    require("../../assets/images/social-5.jpg"),
+  ];
+
+  const pickHeaderImage = () => {
+    const key = name || "header";
+    let sum = 0;
+    for (let i = 0; i < key.length; i++) sum += key.charCodeAt(i);
+    const idx = sum % socialImages.length;
+    return socialImages[idx];
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.backgroundImage}>
-        <Placeholder width={300} height={100} type="post" />
+        <Image source={pickHeaderImage()} style={styles.headerImage} resizeMode="cover" />
       </View>
 
       <View style={styles.profileContent}>
@@ -67,6 +83,10 @@ const styles = StyleSheet.create({
   backgroundImage: {
     width: "100%",
     height: 100,
+  },
+  headerImage: {
+    width: "100%",
+    height: "100%",
   },
   profileContent: {
     backgroundColor: "#ffffff",
